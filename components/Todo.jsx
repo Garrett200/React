@@ -1,8 +1,11 @@
-function Todo() {
-    return <div>
-                <h2>Finish Frontend Simplified</h2>
+import './Todo.css'
+
+function Todo({ title, paragraph }) {
+    return <div className='todo'>
+                <h2>{title}</h2>
+                <p>{paragraph}</p>
                 <button className="delete">Done</button>
             </div>
 }
 
-export default Todo
+export default Todo;
