@@ -2,7 +2,20 @@
   box-sizing: border-box;
 }
 
+p,
+h2 {
+  text-align: center;
+  font-size: 26px;
+}
+
 .todo__wrapper {
   display: flex;
   flex-wrap: wrap;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
