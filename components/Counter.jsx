@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
 
 function Counter() {
-    const [counter, setCounter] = useState(0)
+    const [cart, setCart] = useState({
+        item: "apple",
+        quantity: 0,
+    });
 
-    function incrementCounter() {
-        setCounter(counter +1)
+    function removeApple() {
+        // Use a callback to get the previous value
+        // Spread out all the properties of the prev state
+        // Only chage the property that you need to change
+        setCart((prevCart) => ({
+            ...prevCart,
+            quantity: prevCart.quantity - 1,
+        }))
     }
+    
+    function addApple() {
 
-    function decrementCounter(){
-        setCounter(counter -1)
+        setCart((prevCart) => ({
+            ...prevCart,
+            quantity: prevCart.quantity + 1,
+        }))
     }
 
     return (
         <div>
-            <button onClick={decrementCounter}>-</button>
-            {counter}
-            <button onClick={incrementCounter}>+</button>
+            <button onClick={removeApple}>-</button>
+            {cart.quantity}
+            {cart.item}
+            <button onClick={addApple}>+</button>
         </div>
     )
 }
