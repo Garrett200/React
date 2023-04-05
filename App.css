@@ -8,6 +8,10 @@ h2 {
   font-size: 26px;
 }
 
+.input__wrapper {
+  margin-bottom: 24px;
+}
+
 .todo__wrapper {
   display: flex;
   flex-wrap: wrap;
