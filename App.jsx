@@ -3,24 +3,36 @@ import Todo from './components/Todo.jsx'
 import Title from './components/Title.jsx'
 import Modal from './components/Modal.jsx'
 import Counter from './components/Counter.jsx'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  var [showTodo, setShowTodo] = useState(true)
+  const [showTodo, setShowTodo] = useState([])
   const [showModal, setShowModal] = useState(false)
 
   function deleteTodo() {
-    setShowModal(true)
+    setShowModal(true);
   }
 
   function modalConfirm() {
-    setShowModal(false)
-    setShowTodo((prevTodoArr) => prevTodoArr - showTodo)
+    setShowModal(false);
   }
 
   function modalCancel() {
-    setShowModal(false)
+    setShowModal(false);
   }
+
+  useEffect(() => {
+    console.log('run on mount.')
+  })
+
+  useEffect(() => {
+    console.log(`run on mount and on showModal(${showModal}) change.`)
+  }, [showModal])
+
+  // Barely ever used
+  useEffect(() => {
+    console.log('run on every render.')
+  })
 
   // showModal gives the current state and setShowModal will be the function
 
